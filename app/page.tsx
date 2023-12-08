@@ -3,6 +3,7 @@ import AuthButton from '../components/AuthButton'
 import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
 import { getbestMovies } from "@/API/api";
+import Footer from '@/components/Footer';
 
 export default async function Index() {
   const cookieStore = cookies()
@@ -28,9 +29,10 @@ export default async function Index() {
         </div>
       </nav>
       <div className="потом буду делать css">
-        <h1 className="best">Best Movies</h1>z
-        <div>movies={bestMovies}</div> 
+        <h1 className="best">Best Movies</h1>
+        <div>movies={bestMovies}</div>
       </div>
+      <Footer/>
     </div>
   )
 }
