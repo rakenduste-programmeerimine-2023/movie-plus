@@ -5,6 +5,7 @@ import { cookies } from 'next/headers'
 import { getbestMovies } from "@/API/api";
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import Image from 'next/image'
 
 export default async function Index() {
   const cookieStore = cookies()
@@ -20,9 +21,9 @@ export default async function Index() {
 
   const isSupabaseConnected = canInitSupabaseClient()
   const bestMovies = await getbestMovies();
-
+  console.log('bestMovies', bestMovies)
   return (
-    <div className="flex-1 w-full flex flex-col gap-20 items-center bg-red">
+    <div className="flex-1 w-full flex flex-col gap-20 items-center bg-black">
       <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
           <DeployButton />
@@ -32,7 +33,18 @@ export default async function Index() {
       </nav>
       <div className="потом буду делать css">
         <h1 className="best">Best Movies</h1>
-        <div>movies={bestMovies}</div>
+        <div>
+          {bestMovies?.map(movie => 
+          <div>
+            <Image 
+            width={300}
+            height={300}
+            src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} 
+            alt={movie?.title} />
+            <div>{movie?.title}</div>
+          </div>
+          )}
+          </div>
       </div>
       <Footer/>
     </div>
