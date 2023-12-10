@@ -2,11 +2,11 @@ import DeployButton from '../components/DeployButton'
 import AuthButton from '../components/AuthButton'
 import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
-
+import { getbestMovies } from "@/API/api";
+import Image from 'next/image'
 
 export default async function Index() {
   const cookieStore = cookies()
-
   const canInitSupabaseClient = () => {
     try {
       createClient(cookieStore)
@@ -17,8 +17,9 @@ export default async function Index() {
   }
 
   const isSupabaseConnected = canInitSupabaseClient()
- 
+  const bestMovies = await getbestMovies();
   
+  console.log('bestMovies', bestMovies)
   return (
     <div className="flex-1 w-full flex flex-col gap-20 items-center bg-black">
       <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
@@ -27,6 +28,21 @@ export default async function Index() {
           {isSupabaseConnected && <AuthButton />}
         </div>
       </nav>
+      <div className="потом буду делать css">
+        <h1 className="best">Best Movies</h1>
+        <div>
+          {bestMovies?.map(movie => 
+          <div>
+            <Image 
+            width={300}
+            height={300}
+            src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} 
+            alt={movie?.title} />
+            <div>{movie?.title}</div>
+          </div>
+          )}
+          </div>
+      </div>
     </div>
   )
 }

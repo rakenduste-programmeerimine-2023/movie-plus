@@ -2,7 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Остальной ваш CSS */
 @layer base {
   :root {
     --background: 200 20% 98%;
@@ -10,19 +22,31 @@
   --btn-background-hover: 200 10% 89%;
   --foreground: 200 50% 50%;
   }
+
+  /* ... остальной ваш CSS ... */
+}
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #ffffff;
+  background-color: black;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
 
 @layer base {
   * {
     @apply border-foreground/20;
   }
 }
-
 .animate-in {
   animation: animateIn 0.3s ease 0.15s both;
 }
-
 @keyframes animateIn {
   from {
     opacity: 0;
