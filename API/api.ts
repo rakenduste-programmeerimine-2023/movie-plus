@@ -15,7 +15,7 @@ export const getbestMovies = async () => {
 };
 export const getcomedy= async () => {
   const res = await fetch(
-    "https://api.themoviedb.org/3/discover/movie?&with_genres=35&without_genres=16&sort_by=popularity.desc ",
+    "https://api.themoviedb.org/3/discover/movie?&with_genres=35&without_genres=16&sort_by=popularity.desc",
     {
       headers: {
         accept: "application/json",
