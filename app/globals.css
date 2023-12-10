@@ -2,19 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
-/* Остальной ваш CSS */
 @layer base {
   :root {
     --background: 200 20% 98%;
@@ -22,22 +10,8 @@ body {
   --btn-background-hover: 200 10% 89%;
   --foreground: 200 50% 50%;
   }
-
-  /* ... остальной ваш CSS ... */
-}
-/* CSS Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: #ffffff;
-  background-color: black;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-}
 
 @layer base {
   * {
