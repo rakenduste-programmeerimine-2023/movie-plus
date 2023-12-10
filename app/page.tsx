@@ -4,6 +4,7 @@ import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
 import { getbestMovies } from "@/API/api";
 import Image from 'next/image'
+import Header from '@/components/Header';
 
 export default async function Index() {
   const cookieStore = cookies()
@@ -18,7 +19,7 @@ export default async function Index() {
 
   const isSupabaseConnected = canInitSupabaseClient()
   const bestMovies = await getbestMovies();
-  
+
   console.log('bestMovies', bestMovies)
   return (
     <div className="flex-1 w-full flex flex-col gap-20 items-center bg-black">
@@ -26,6 +27,7 @@ export default async function Index() {
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
           <DeployButton />
           {isSupabaseConnected && <AuthButton />}
+          <Header/>
         </div>
       </nav>
       <div className="потом буду делать css">
