@@ -5,6 +5,7 @@ import { cookies } from 'next/headers'
 import { getbestMovies } from "@/API/api";
 import Image from 'next/image'
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export default async function Index() {
   const cookieStore = cookies()
@@ -45,6 +46,7 @@ export default async function Index() {
           )}
           </div>
       </div>
+      <Footer/>
     </div>
   )
 }
