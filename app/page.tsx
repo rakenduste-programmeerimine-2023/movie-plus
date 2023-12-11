@@ -34,7 +34,7 @@ export default async function Index() {
         </div>
       </nav>
       <div className="h-[600px] overflow-auto w-full">
-  <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">Best movies</h1>
+  <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-4">Best movies</h1>
   <div className='flex flex-wrap justify-center gap-4'>
     {bestMovies?.slice(7, 12)?.map((movie:any, index:number) => (
       <div key={index} className="mb-1">
@@ -49,8 +49,9 @@ export default async function Index() {
     ))}
   </div>
 </div>
-<div className="h-[600px] overflow-auto w-full">
-  <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">Comedy movies</h1>
+
+<div className="h-[600px] overflow-auto w-full" style={{ marginTop: '-5rem' }}>
+  <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-4">Comedy movies</h1>
   <div className='flex flex-wrap justify-center gap-4'>
     {comedy?.slice(5, 10)?.map((movie:any) => 
       <div key={movie.id} className="mb-1">
@@ -65,7 +66,8 @@ export default async function Index() {
     )}
   </div>
 </div>
-      <div className="h-[600px] overflow-auto w-full">
+
+      <div className="h-[600px] overflow-auto w-full"style={{ marginTop: '-5rem' }}>
         <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">Drama movies</h1>
         <div className='flex flex-wrap justify-center gap-4'>
           {dramaMovies?.slice(5, 10)?.map((movie:any) => 
@@ -81,7 +83,7 @@ export default async function Index() {
           )}
           </div>
       </div>
-      <div className="h-[600px] overflow-auto w-full">
+      <div className="h-[600px] overflow-auto w-full"style={{ marginTop: '-5rem' }}>
         <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">Horror Movies</h1>
         <div className='flex flex-wrap justify-center gap-4'>
           {horror?.slice(11, 16)?.map((movie:any) => 
@@ -96,7 +98,7 @@ export default async function Index() {
           )}
           </div>
       </div>
-      <div className="h1-[600px] overflow-auto w-full -mt-4">
+      <div className="h1-[600px] overflow-auto w-full -mt-4"style={{ marginTop: '-5rem' }}>
         <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">Cartoons</h1>
         <div className='flex flex-wrap justify-center gap-4'>
           {cartoons?.slice(6, 11).map((movie:any) => 
