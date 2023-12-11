@@ -28,7 +28,7 @@ function Footer() {
             />
           </div>
         </div>
-        <h1>© {new Date().getFullYear()} All rights reserved</h1>
+        <h1 style={{ fontWeight: 100 }}>© {new Date().getFullYear()} All rights reserved </h1>
       </div>
     );
   }
