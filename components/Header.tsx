@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import minuLogo from '@/components/image/ogg.jpg';
+import minuLogo from '@/components/image/ogg.jpg';n
 
 const Header: React.FC = () => {
   return (
@@ -8,5 +8,4 @@ const Header: React.FC = () => {
     </div>
   );
 };
-
 export default Header;
