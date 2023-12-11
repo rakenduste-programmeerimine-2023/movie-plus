@@ -34,7 +34,7 @@ export default async function Index() {
         </div>
       </nav>
       <div className="h-[600px] overflow-auto w-full">
-        <h1 className="best">Best movies</h1>
+        <h1 className="text-lg md:text-xl lg:text-2xl font-thin text-center">Best movies</h1>
         <div className='flex flex-wrap w-full'>
           {bestMovies?.slice(0, 10)?.map((movie:any) => 
           <div>
@@ -49,7 +49,7 @@ export default async function Index() {
           </div>
       </div>
       <div className="h-[600px] overflow-auto w-full">
-        <h1 className="best">Comedy movies</h1>
+        <h1 className="text-lg md:text-xl lg:text-2xl font-thin text-center">Comedy movies</h1>
         <div className='flex flex-wrap w-full'>
           {comedy?.slice(0, 10)?.map((movie:any) => 
           <div>
@@ -64,7 +64,7 @@ export default async function Index() {
           </div>
       </div>
       <div className="h-[600px] overflow-auto w-full">
-        <h1 className="best">Drama movies</h1>
+        <h1 className="text-lg md:text-xl lg:text-2xl font-thin text-center">Drama movies</h1>
         <div className='flex flex-wrap w-full'>
           {dramaMovies?.slice(0, 10)?.map((movie:any) => 
           <div>
@@ -79,7 +79,7 @@ export default async function Index() {
           </div>
       </div>
       <div className="h-[600px] overflow-auto w-full">
-        <h1 className="best">Horror Movies</h1>
+        <h1 className="text-lg md:text-xl lg:text-2xl font-thin text-center">Horror Movies</h1>
         <div className='flex flex-wrap w-full'>
           {horror?.slice(0, 10)?.map((movie:any) => 
           <div>
@@ -94,7 +94,7 @@ export default async function Index() {
           </div>
       </div>
       <div className="h-[600px] overflow-auto w-full">
-        <h1 className="best">Cartoons</h1>
+        <h1 className="text-lg md:text-xl lg:text-2xl font-thin text-center">Cartoons</h1>
         <div className='flex flex-wrap w-full'>
           {cartoons?.slice(0, 10).map((movie:any) => 
           <div>
