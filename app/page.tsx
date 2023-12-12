@@ -4,7 +4,7 @@ import AuthButton from '../components/AuthButton'
 import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
 import { getbestMovies, getcomedy, getdramaMovies, gethorror, getCartoons } from "@/API/api";
-import Header from '@/components/Header';
+import HeaderComponent from '@/components/HeaderComponent'
 import Image from 'next/image'
 import FooterComponent from '@/components/FooterComponent'
 
@@ -32,8 +32,10 @@ export default async function Index() {
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
           <AboutUsButton />
           <SignUpButton/>
-          {isSupabaseConnected && <AuthButton />}
-          <Header/>
+          {isSupabaseConnected && <AuthButton />}  
+        </div>
+        <div className="hj absolute top-0 right-0">
+        <HeaderComponent/>
         </div>
       </nav>
       <div className="h-[600px] overflow-auto w-full">
