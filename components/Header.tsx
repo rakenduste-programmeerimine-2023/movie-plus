@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import minuLogo from '@/components/Logo/minulogo.png';
+import minuLogo from '@/components/image/ogg.jpg';
 
 const Header: React.FC = () => {
   return (

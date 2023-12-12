@@ -1,26 +1,37 @@
 import Image from 'next/image';
-import logof from '@/components/Logo/logof.jpg';
-
+import logof from '@/components/image/logof.jpg';
+import newslogo from '@/components/image/newslogo.jpg';
 function Footer() {
-  return (
-    <div className="flex-1 w-full flex flex-col gap-30 items-left place-content-end">
-      <h1>© {new Date().getFullYear()} All rights reserved</h1>
-      <div className="logof-container" style={{ position: 'relative' }}>
-        <Image
-          src={logof}
-          alt="Logof"
-          className="logof"
-          style={{
-            position: 'absolute',
-            bottom: '10px',
-            right: '10px',
-            width: '300px', // Задайте требуемую ширину
-            height: 'auto', // Установите высоту "auto", чтобы пропорции сохранялись
-          }}
-        />
+    return (
+      <div className="flex-1 w-full flex flex-col gap-30 items-left place-content-end">
+        <div style={{ position: 'relative', display: 'flex', justifyContent: 'flex-end' }}>
+          <div style={{ position: 'relative', marginRight: '20px' }}>
+            <Image
+              src={logof}
+              alt="Logof"
+              className="logof"
+              style={{
+                width: '200px',
+                height: 'auto',
+              }}
+            />
+          </div>
+          <div style={{ position: 'relative' }}>
+            <Image
+              src={newslogo}
+              alt="newslogo"
+              className="newslogo"
+              style={{
+                width: '200px',
+                height: 'auto',
+              }}
+            />
+          </div>
+        </div>
+        <h1 style={{ fontWeight: 100 }}>© {new Date().getFullYear()} All rights reserved </h1>
       </div>
-    </div>
-  );
-}
-
-export default Footer;
+    );
+  }
+  
+  export default Footer;
+  
