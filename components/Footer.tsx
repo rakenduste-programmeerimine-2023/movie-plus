@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import logof from '@/components/image/logof.jpg';
-import newslogo from '@/components/image/newslogo.jpg';
+import logof from '@/image/logof.jpg';
+import newslogo from '@/image/newslogo.jpg';
 function Footer() {
     return (
       <div className="flex-1 w-full flex flex-col gap-30 items-left place-content-end">
