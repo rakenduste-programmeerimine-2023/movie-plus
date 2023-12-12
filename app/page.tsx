@@ -7,6 +7,7 @@ import { getbestMovies, getcomedy, getdramaMovies, gethorror, getCartoons } from
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Image from 'next/image'
+
 export default async function Index() {
   const cookieStore = cookies()
   const canInitSupabaseClient = () => {
