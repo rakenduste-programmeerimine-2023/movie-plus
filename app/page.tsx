@@ -4,9 +4,9 @@ import AuthButton from '../components/AuthButton'
 import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
 import { getbestMovies, getcomedy, getdramaMovies, gethorror, getCartoons } from "@/API/api";
-import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Image from 'next/image'
+import FooterComponent from '@/components/FooterComponent'
 
 export default async function Index() {
   const cookieStore = cookies()
@@ -116,7 +116,7 @@ export default async function Index() {
           )}
           </div>
       </div>
-      <Footer/>
+      <FooterComponent/>
     </div>
   )
 }
