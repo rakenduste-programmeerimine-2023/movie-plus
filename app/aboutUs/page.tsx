@@ -2,7 +2,10 @@ import SignUpButton from '../../components/SignUpButton';
 import AboutUsButton from '../../components/AboutUsButton';
 import AuthButton from '../../components/AuthButton';
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import FooterComponent from '@/components/FooterComponent';
+import Image from 'next/image';
+import me from '@/image/me.jpg';
+import notme from '@/image/notme.jpg';
 
 export default async function Page() {
   return (
@@ -13,15 +16,18 @@ export default async function Page() {
           <SignUpButton />
           <AuthButton />
           <Header />
-          <Footer/>
         </div>
       </nav>
-      <div className="flex flex-1 items-center justify-center">
-        <a
-          className="py-6 px-8 rounded-md bg-btn-background-hover border font-thin text-2xl">
-          About us
-        </a>
+      <div className="button-container relative flex flex-col items-center mt-5">
+        <a className="text-white font-thin text-4xl mb-2">About us</a>
+        <div className="flex">
+          <Image src={me} alt="Logo" width={250} height={250} className="mr-4"/>
+          <Image src={notme} alt="Logo" width={250} height={250} />
+        </div>
       </div>
+      <FooterComponent />
     </div>
   );
 }
+
+
