@@ -61,7 +61,7 @@ export const getCartoons = async () => {
   return data.results;
 };
 
-export const getHorror = async () => {
+export const gethorror = async () => {
   const res = await fetch(
     "https://api.themoviedb.org/3/discover/movie?&with_genres=27",
     {
