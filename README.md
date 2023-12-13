@@ -37,3 +37,41 @@ MoviePlus on dünaamiline veebirakendus, mis on loodud filmihuvilistele ja pakub
 - React Router
 - Material UI
 - [Supabase]
+
+## Wireframe
+
+-Main page
+
+![Alt text](wireframe/movies.jpg)
+
+-About us page
+
+![Alt text](wireframe/aboutus.jpg)
+
+-Feedback page
+
+![Alt text](wireframe/feedback.jpg)
+
+-News letter page
+
+![Alt text](wireframe/news.jpg)
+
+-Search page
+
+![Alt text](wireframe/search.jpg)
+
+-Movies description page
+
+![Alt text](wireframe/moviesD.jpg)
+
+-Sign up page
+
+![Alt text](wireframe/signup.jpg)
+
+-Login page
+
+![Alt text](wireframe/login.jpg)
+
+-Main page (sign in)
+
+![Alt text](wireframe/mypage.jpg)
