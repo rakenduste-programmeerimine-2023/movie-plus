@@ -38,40 +38,40 @@ MoviePlus on dünaamiline veebirakendus, mis on loodud filmihuvilistele ja pakub
 - Material UI
 - [Supabase]
 
-## Wireframe
+# Wireframe
 
--Main page
+- Main page
 
-![Alt text](wireframe/movies.jpg)
+<img src="wireframe/movies.jpg" alt="Main page" width="200">
 
--About us page
+- About us page
 
-![Alt text](wireframe/aboutus.jpg)
+<img src="wireframe/aboutus.jpg" alt="About us page" width="200">
 
--Feedback page
+- Feedback page
 
-![Alt text](wireframe/feedback.jpg)
+<img src="wireframe/feedback.jpg" alt="Feedback page" width="200">
 
--News letter page
+- Newsletter page
 
-![Alt text](wireframe/news.jpg)
+<img src="wireframe/news.jpg" alt="Newsletter page" width="200">
 
--Search page
+- Search page
 
-![Alt text](wireframe/search.jpg)
+<img src="wireframe/search.jpg" alt="Search page" width="200">
 
--Movies description page
+- Movies description page
 
-![Alt text](wireframe/moviesD.jpg)
+<img src="wireframe/moviesD.jpg" alt="Movies description page" width="200">
 
--Sign up page
+- Sign up page
 
-![Alt text](wireframe/signup.jpg)
+<img src="wireframe/signup.jpg" alt="Sign up page" width="200">
 
--Login page
+- Login page
 
-![Alt text](wireframe/login.jpg)
+<img src="wireframe/login.jpg" alt="Login page" width="200">
 
--Main page (sign in)
+- Main page (sign in)
 
-![Alt text](wireframe/mypage.jpg)
+<img src="wireframe/mypage.jpg" alt="Main page (sign in)" width="200">
