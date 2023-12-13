@@ -62,7 +62,7 @@ MoviePlus on dünaamiline veebirakendus, mis on loodud filmihuvilistele ja pakub
 
 - Movies description page
 
-<img src="wireframe/moviesD.jpg" alt="Movies description page" width="200">
+<img src="wireframe/movieD.jpg" alt="Movies description page" width="200">
 
 - Sign up page
 
