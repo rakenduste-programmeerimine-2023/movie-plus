@@ -10,7 +10,7 @@ export default function Search() {
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     if (searchText) {
-      router.push(`/movies/search?query=${searchText}`);
+      router.push(`/search?query=${searchText}`);
     }
   };
 
@@ -31,8 +31,8 @@ export default function Search() {
           value={searchText}
           className="form-control mr-sm-2 rounded text-white font-thin pl-2 border border-solid border-gray-600"
           type="search"
-          placeholder="Search"
-          aria-label="Search"
+          placeholder="search"
+          aria-label="search"
           style={{height: "30px"}}
           autoComplete="off"
           id="search-input"
