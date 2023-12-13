@@ -18,7 +18,7 @@ export default function Page() {
         </div>
       </nav>
       <div className="button-container relative flex flex-col items-center mt-5">
-        <a className="text-white font-thin text-4xl mb-2">About us</a>
+      <a className="text-white font-thin text-4xl mb-2" style={{ marginTop: '10px' }}>About us</a>
         <div className="flex items-end">
           <div className="mr-4">
             <Image src={me} alt="Logo" width={250} height={250} />

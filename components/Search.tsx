@@ -29,7 +29,7 @@ export default function Search() {
         <input
           onChange={handleChange}
           value={searchText}
-          className="form-control mr-sm-2 rounded text-black pl-2 border border-solid border-gray-600"
+          className="form-control mr-sm-2 rounded text-white font-thin pl-2 border border-solid border-gray-600"
           type="search"
           placeholder="Search"
           aria-label="Search"

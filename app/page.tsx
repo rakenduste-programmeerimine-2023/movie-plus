@@ -91,7 +91,7 @@ export default async function Index() {
       <div className="h-[600px] overflow-auto w-full"style={{ marginTop: '-5rem' }}>
         <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">Horror Movies</h1>
         <div className='flex flex-wrap justify-center gap-4'>
-          {horror?.slice(11, 16)?.map((movie:any) => 
+          {horror?.slice(13, 18)?.map((movie:any) => 
           <div>
             <Image 
             width={230}
