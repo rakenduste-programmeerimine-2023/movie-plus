@@ -6,7 +6,7 @@ import Search from '@/components/Search';
 const HeaderComponent: React.FC = () => {
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <div style={{ marginLeft: '70px' }}> {/* Adjust margin as needed */}
+      <div style={{ marginRight: '200px' }}>
         <Search />
       </div>
       <Link href="http://localhost:3000/">
@@ -19,7 +19,6 @@ const HeaderComponent: React.FC = () => {
 };
 
 export default HeaderComponent;
-
 
 
 
