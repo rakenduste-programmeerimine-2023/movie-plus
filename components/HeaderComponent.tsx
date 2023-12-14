@@ -14,8 +14,8 @@ const HeaderComponent: React.FC = () => {
           <Image src={ogg} alt="Logo" width={300} height={300} />
         </div>
       </Link>
-    </div>
-
+    </div>)
+}
 
 export default HeaderComponent;
 
