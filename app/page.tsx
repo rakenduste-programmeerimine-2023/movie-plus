@@ -1,25 +1,32 @@
-import SignUpButton from '../components/SignUpButton'
-import AboutUsButton from '../components/AboutUsButton'
-import AuthButton from '../components/AuthButton'
-import { createClient } from '@/utils/supabase/server'
-import { cookies } from 'next/headers'
-import { getbestMovies, getcomedy, getdramaMovies, gethorror, getCartoons } from "@/API/api";
-import HeaderComponent from '@/components/HeaderComponent'
-import Image from 'next/image'
-import FooterComponent from '@/components/FooterComponent'
+import SignUpButton from "../components/SignUpButton";
+import AboutUsButton from "../components/AboutUsButton";
+import AuthButton from "../components/AuthButton";
+import { createClient } from "@/utils/supabase/server";
+import { cookies } from "next/headers";
+import {
+  getbestMovies,
+  getcomedy,
+  getdramaMovies,
+  gethorror,
+  getCartoons,
+} from "@/API/api";
+import HeaderComponent from "@/components/HeaderComponent";
+import Image from "next/image";
+import FooterComponent from "@/components/FooterComponent";
+import MovieCard from "@/components/MovieCard";
 
 export default async function Index() {
-  const cookieStore = cookies()
+  const cookieStore = cookies();
   const canInitSupabaseClient = () => {
     try {
-      createClient(cookieStore)
-      return true
+      createClient(cookieStore);
+      return true;
     } catch (e) {
-      return false
+      return false;
     }
-  }
+  };
 
-  const isSupabaseConnected = canInitSupabaseClient()
+  const isSupabaseConnected = canInitSupabaseClient();
   const bestMovies = await getbestMovies();
   const comedy = await getcomedy();
   const dramaMovies = await getdramaMovies();
@@ -31,94 +38,78 @@ export default async function Index() {
       <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
           <AboutUsButton />
-          <SignUpButton/>
-          {isSupabaseConnected && <AuthButton />}  
+          <SignUpButton />
+          {isSupabaseConnected && <AuthButton />}
         </div>
         <div className="hj absolute top-0 right-0">
-        <HeaderComponent/>
+          <HeaderComponent />
         </div>
       </nav>
       <div className="h-[600px] overflow-auto w-full">
-  <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-4">Best movies</h1>
-  <div className='flex flex-wrap justify-center gap-4'>
-    {bestMovies?.slice(7, 12)?.map((movie:any, index:number) => (
-      <div key={index} className="mb-1">
-        <Image 
-          width={230}
-          height={230}
-          src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} 
-          alt={movie?.title} 
-        />
-        <div className="text-center font-thin">{movie?.title}</div>
+        <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-4">
+          Best movies
+        </h1>
+        <ul className="flex flex-wrap justify-center gap-4">
+          {bestMovies
+            ?.slice(7, 12)
+            ?.map((movie: any, index: number) => (
+              <MovieCard {...movie} key={movie.id} />
+            ))}
+        </ul>
       </div>
-    ))}
-  </div>
-</div>
-
-<div className="h-[600px] overflow-auto w-full" style={{ marginTop: '-5rem' }}>
-  <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-4">Comedy movies</h1>
-  <div className='flex flex-wrap justify-center gap-4'>
-    {comedy?.slice(5, 10)?.map((movie:any) => 
-      <div key={movie.id} className="mb-1">
-        <Image 
-          width={230}
-          height={230}
-          src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} 
-          alt={movie?.title} 
-        />
-        <div className="text-center font-thin">{movie?.title}</div>
+      <div
+        className="h-[600px] overflow-auto w-full"
+        style={{ marginTop: "-5rem" }}
+      >
+        <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-4">
+          Comedy movies
+        </h1>
+        <ul className="flex flex-wrap justify-center gap-4">
+          {comedy
+            ?.slice(5, 10)
+            ?.map((movie: any) => <MovieCard {...movie} key={movie.id} />)}
+        </ul>
       </div>
-    )}
-  </div>
-</div>
-
-      <div className="h-[600px] overflow-auto w-full"style={{ marginTop: '-5rem' }}>
-        <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">Drama movies</h1>
-        <div className='flex flex-wrap justify-center gap-4'>
-          {dramaMovies?.slice(5, 10)?.map((movie:any) => 
-          <div>
-            <Image 
-            width={230}
-            height={230}
-            src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} 
-            alt={movie?.title} />
-            <div className="text-center font-thin">{movie?.title}</div>
-          </div>
-          
-          )}
-          </div>
+      <div
+        className="h-[600px] overflow-auto w-full"
+        style={{ marginTop: "-5rem" }}
+      >
+        <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">
+          Drama movies
+        </h1>
+        <ul className="flex flex-wrap justify-center gap-4">
+          {dramaMovies
+            ?.slice(5, 10)
+            ?.map((movie: any) => <MovieCard {...movie} key={movie.id} />)}
+        </ul>
       </div>
-      <div className="h-[600px] overflow-auto w-full"style={{ marginTop: '-5rem' }}>
-        <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">Horror Movies</h1>
-        <div className='flex flex-wrap justify-center gap-4'>
-          {horror?.slice(13, 18)?.map((movie:any) => 
-          <div>
-            <Image 
-            width={230}
-            height={230}
-            src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} 
-            alt={movie?.title} />
-            <div className="text-center font-thin">{movie?.title}</div>
-          </div>
-          )}
-          </div>
+      <div
+        className="h-[600px] overflow-auto w-full"
+        style={{ marginTop: "-5rem" }}
+      >
+        <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">
+          Horror Movies
+        </h1>
+        <div className="flex flex-wrap justify-center gap-4">
+          {horror
+            ?.slice(13, 18)
+            ?.map((movie: any) => <MovieCard {...movie} key={movie.id} />)}
+        </div>
       </div>
-      <div className="h1-[600px] overflow-auto w-full -mt-4"style={{ marginTop: '-5rem' }}>
-        <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">Cartoons</h1>
-        <div className='flex flex-wrap justify-center gap-4'>
-          {cartoons?.slice(6, 11).map((movie:any) => 
-          <div>
-            <Image 
-            width={230}
-            height={230}
-            src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} 
-            alt={movie?.title} />
-            <div className="text-center font-thin">{movie?.title}</div>
-          </div>
-          )}
-          </div>
+      <div
+        className="h1-[600px] overflow-auto w-full -mt-4"
+        style={{ marginTop: "-5rem" }}
+      >
+        <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">
+          Cartoons
+        </h1>
+        <ul className="flex flex-wrap justify-center gap-4">
+          {cartoons
+            ?.slice(6, 11)
+            .map((movie: any) => <MovieCard {...movie} key={movie.id} />)}
+        </ul>
       </div>
-      <FooterComponent/>
+      <FooterComponent />
     </div>
-  )
+  );
 }
