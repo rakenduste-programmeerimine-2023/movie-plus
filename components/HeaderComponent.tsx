@@ -15,10 +15,7 @@ const HeaderComponent: React.FC = () => {
         </div>
       </Link>
     </div>
-  );
-};
+
 
 export default HeaderComponent;
-
-
 
