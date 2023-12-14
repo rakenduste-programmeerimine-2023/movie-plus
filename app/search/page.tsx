@@ -1,9 +1,9 @@
 import React from "react";
-import { getMovies, getMoviesBySearch } from "@/API/api";
+import { getMoviesBySearch } from "@/API/api";
 import AuthButton from "@/components/AuthButton";
-import SearchPage from "@/components/SearchPage";
 import HeaderComponent from "@/components/HeaderComponent";
 import FooterComponent from "@/components/FooterComponent";
+import MovieCard from "@/components/MovieCard";
 
 interface PageProps {
   searchParams: { query: string };
@@ -11,7 +11,7 @@ interface PageProps {
 
 async function Page({ searchParams }: PageProps) {
   const searchText = searchParams.query;
-  const movies = await getMoviesBySearch({ query: searchText });
+  const searchedMovies = await getMoviesBySearch({ query: searchText });
 
   return (
     <div className="f">
@@ -21,7 +21,11 @@ async function Page({ searchParams }: PageProps) {
           <AuthButton />
         </div>
       </nav>
-      <SearchPage searchText={searchText} search={movies} />
+      <ul className="flex flex-wrap justify-center gap-4">
+        {searchedMovies
+          ?.slice(6, 11)
+          .map((movie: any) => <MovieCard {...movie} key={movie.id} />)}
+      </ul>
       <footer className="wi">
         <div className="wp">
           <div className="h">
