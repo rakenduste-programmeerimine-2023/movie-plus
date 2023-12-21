@@ -2,6 +2,7 @@ import Image from 'next/image';
 import ogg from '@/image/ogg.jpg';
 import Link from 'next/link';
 
+
 const Header: React.FC = () => {
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
