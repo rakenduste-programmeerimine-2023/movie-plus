@@ -2,6 +2,7 @@ import AuthButton from "../components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
 import Header from "@/components/Header";
+import SignUpButton from "@/components/SignUpButton";
 
 export default async function Index() {
   const cookieStore = cookies();
@@ -17,11 +18,12 @@ export default async function Index() {
   const isSupabaseConnected = canInitSupabaseClient();
 
   return (
-    <div className="flex-1 w-full flex flex-col gap-10 items-center bg-black">
-      <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-        <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
+    <div className="f">
+      <nav className="w">
+        <div className="w">
           {isSupabaseConnected && <AuthButton />}
         </div>
+        <SignUpButton />
         <div className="h-16 absolute top-0 right-0">
           <Header />
         </div>
@@ -29,4 +31,5 @@ export default async function Index() {
     </div>
   );
 }
+
 
