@@ -84,7 +84,7 @@ export default function NewsletterPage() {
           className="rounded-md px-4 py-2 bg-inherit border mb-6"
           type="email"
           name="email"
-          placeholder="email"
+          placeholder="Email"
           value={formData.email}
           onChange={handleChange}
           required
