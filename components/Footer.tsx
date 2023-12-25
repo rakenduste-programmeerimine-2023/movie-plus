@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import logof from '@/image/logof.jpg';
 import newslogo from '@/image/newslogo.jpg';
-
+import Link from 'next/link';
 
 function Footer(){
   return (
@@ -22,15 +22,17 @@ function Footer(){
         </div>
         {}
         <div style={{ position: 'relative' }}>
-          <Image
-            src={newslogo}
-            alt="newslogo"
-            className="newslogo"
-            style={{
-              width: '200px',
-              height: 'auto',
-            }}
-          />
+        <Link href="/newsletter">
+              <Image
+                src={newslogo}
+                alt="newslogo"
+                className="newslogo"
+                style={{
+                  width: '200px',
+                  height: 'auto',
+                }}
+              />
+          </Link>
         </div>
       </div>
 
