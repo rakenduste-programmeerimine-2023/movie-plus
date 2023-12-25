@@ -1,10 +1,10 @@
-import SignUpButton from "../components/SignUpButton";
-import AboutUsButton from "../components/AboutUsButton";
 import AuthButton from "../components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SignUpButton from "@/components/SignUpButton";
+import AboutUsButton from "@/components/AboutUsButton";
 
 
 export default async function Index() {
@@ -35,3 +35,5 @@ export default async function Index() {
     </div>
   );
 }
+
+
