@@ -1,7 +1,9 @@
 import React from 'react';
 
 function Footer() {
-  return <></>;
+  return (
+    <h1>&copy; {new Date().getFullYear()} All rights reserved</h1>
+  );
 }
 
 export default Footer;

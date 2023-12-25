@@ -4,6 +4,7 @@ import { cookies } from "next/headers";
 import Header from "@/components/Header";
 import SignUpButton from "@/components/SignUpButton";
 import AboutUsButton from "@/components/AboutUsButton";
+import Footer from "@/components/Footer";
 
 export default async function Index() {
   const cookieStore = cookies();
@@ -28,6 +29,7 @@ export default async function Index() {
         <AboutUsButton/>
         <div className="h-16 absolute top-0 right-0">
           <Header />
+          <Footer/>
         </div>
       </nav>
     </div>
