@@ -3,7 +3,6 @@ import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SignUpButton from "@/components/SignUpButton";
 import AboutUsButton from "@/components/AboutUsButton";
 
 
@@ -24,7 +23,6 @@ export default async function Index() {
       <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
           <AboutUsButton />
-          <SignUpButton />
           {isSupabaseConnected && <AuthButton />}
         </div>
         <div className="hj absolute top-0 right-0">
