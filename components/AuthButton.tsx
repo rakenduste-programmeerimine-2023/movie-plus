@@ -2,6 +2,9 @@ import { createClient } from '@/utils/supabase/server'
 import Link from 'next/link'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
+import Image from 'next/image';
+import login from '@/image/login.jpg';
+
 
 export default async function AuthButton() {
   const cookieStore = cookies()
@@ -21,7 +24,10 @@ export default async function AuthButton() {
   }
 
   return user ? (
-    <div className="flex items-center gap-4">
+    <div className="flex1">
+      <div className="flex2">
+          <Image src={login} alt="Logo" className="border-none" />
+          </div>
       Hey, {user.email}!
       <form action={signOut}>
         <button className="py-2 px-3 flex rounded-md no-underline hover:bg-btn-background-hover border absolute top-0 left-0 m-4 ml-4 font-thin">
