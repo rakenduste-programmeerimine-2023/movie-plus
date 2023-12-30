@@ -1,28 +1,32 @@
 "use client";
 
+import supabase from '@/utils/supabase/supabase';
 import Link from 'next/link';
 import { useState } from 'react';
 
-interface FormData {
-  email: string;
-  message: string;
-}
+export default function FeedBackPage() {
+  const [email, setEmail] = useState<string>('');
+  const [feedback, setFeedback] = useState<string>('');
+  const [successMessage, setSuccessMessage] = useState<string>('');
 
-export default function NewsletterPage() {
-  const [formData, setFormData] = useState<FormData>({
-    email: '',
-    message: '',
-  });
+  const handleSubmit = async (e:any) => {
+    e.preventDefault();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+    const { data, error } = await supabase
+      .from("feedback")
+      .insert([{ feedback, email}])
+      .select();
 
-  const handleSubscribe = () => {
-    console.log('Subscribed:', formData);
+      console.log('erorr', error)
+
+    if (data) {
+      console.log(data);
+      setSuccessMessage(
+        "Successfully sent message. We will get back to you as soon as possible."
+      );
+      setEmail("");
+      setFeedback("");
+    }
   };
 
   return (
@@ -57,8 +61,8 @@ export default function NewsletterPage() {
           type="email"
           name="email"
           placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
+          value={email}
+          onChange={(e)=> setEmail(e.target.value)}
           required
         />
 
@@ -70,14 +74,14 @@ export default function NewsletterPage() {
           type="text"
           name="message"
           placeholder="Tagasiside"
-          value={formData.message}
-          onChange={handleChange}
+          value={feedback}
+          onChange={(e)=> setFeedback(e.target.value)}
           required
         />
 
         <button
           type="button"
-          onClick={handleSubscribe}
+          onClick={handleSubmit}
           className="bg-green-700 rounded-md px-4 py-2 text-foreground mb-2"
         >
           Send
