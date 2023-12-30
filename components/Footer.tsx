@@ -10,6 +10,7 @@ function Footer(){
       <div style={{ position: 'relative', display: 'flex', justifyContent: 'flex-end' }}>
         {}
         <div style={{ position: 'relative', marginRight: '20px' }}>
+        <Link href="/feedback">
           <Image
             src={logof}
             alt="Logof"
@@ -19,6 +20,7 @@ function Footer(){
               height: 'auto',
             }}
           />
+        </Link>
         </div>
         {}
         <div style={{ position: 'relative' }}>
