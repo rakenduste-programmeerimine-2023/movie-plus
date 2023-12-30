@@ -1,30 +1,34 @@
 "use client";
 
+import supabase from '@/utils/supabase/supabase';
 import Link from "next/link";
 import { useState } from "react";
 
-interface FormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-}
-
 export default function NewsletterPage() {
-  const [formData, setFormData] = useState<FormData>({
-    firstName: "",
-    lastName: "",
-    email: "",
-  });
+  const [email, setEmail] = useState<string>('');
+  const [name, setName] = useState<string>('');
+  const [lastName, setLastName] = useState<string>('');
+  const [successMessage, setSuccessMessage] = useState<string>('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const handleSubscribe = async (e:any) => {
+    e.preventDefault();
 
-  const handleSubscribe = () => {
-    console.log("Subscribed:", formData);
+    const { data, error } = await supabase
+      .from("usersForNews")
+      .insert([{email, name, lastName}])
+      .select();
+
+      console.log('erorr', error)
+
+    if (data) {
+      console.log(data);
+      setSuccessMessage(
+        "Successfully sent message. We will get back to you as soon as possible."
+      );
+      setEmail("");
+      setName("");
+      setLastName("");
+    }
   };
 
   return (
@@ -59,8 +63,8 @@ export default function NewsletterPage() {
           type="text"
           name="firstName"
           placeholder="Nimi"
-          value={formData.firstName}
-          onChange={handleChange}
+          value={name}
+          onChange={(e)=> setName(e.target.value)}
           required
         />
 
@@ -72,8 +76,8 @@ export default function NewsletterPage() {
           type="text"
           name="lastName"
           placeholder="Perekonnanimi"
-          value={formData.lastName}
-          onChange={handleChange}
+          value={lastName}
+          onChange={(e)=> setLastName(e.target.value)}
           required
         />
 
@@ -85,8 +89,8 @@ export default function NewsletterPage() {
           type="email"
           name="email"
           placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
+          value={email}
+          onChange={(e)=> setEmail(e.target.value)}
           required
         />
 
