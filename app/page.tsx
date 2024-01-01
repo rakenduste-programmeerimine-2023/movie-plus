@@ -5,6 +5,7 @@ import { cookies } from "next/headers";
 import {
   getbestMovies,
   getcomedy,
+  getdramaMovies,
 } from "@/API/api";
 import MovieCard from "@/components/MovieCard";
 import Footer from "@/components/Footer";
@@ -25,6 +26,7 @@ export default async function Index() {
   const isSupabaseConnected = canInitSupabaseClient();
   const bestMovies = await getbestMovies();
   const comedy = await getcomedy();
+  const dramaMovies = await getdramaMovies();
 
   return (
     <div className="flex-1 w-full flex flex-col gap-10 items-center bg-black">
@@ -58,6 +60,18 @@ export default async function Index() {
         </h1>
         <ul className="flex flex-wrap justify-center gap-4">
           {comedy
+            ?.slice(1, 10)
+            ?.map((movie: any) => <MovieCard {...movie} key={movie.id} />)}
+        </ul>
+      </div>
+      <div
+        className="h-[600px] overflow-auto w-full"
+      >
+        <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">
+          Drama movies
+        </h1>
+        <ul className="flex flex-wrap justify-center gap-4">
+          {dramaMovies
             ?.slice(1, 10)
             ?.map((movie: any) => <MovieCard {...movie} key={movie.id} />)}
         </ul>
