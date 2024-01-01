@@ -6,6 +6,7 @@ import {
   getbestMovies,
   getcomedy,
   getdramaMovies,
+  gethorror,
 } from "@/API/api";
 import MovieCard from "@/components/MovieCard";
 import Footer from "@/components/Footer";
@@ -27,6 +28,7 @@ export default async function Index() {
   const bestMovies = await getbestMovies();
   const comedy = await getcomedy();
   const dramaMovies = await getdramaMovies();
+  const horror = await gethorror();
 
   return (
     <div className="flex-1 w-full flex flex-col gap-10 items-center bg-black">
@@ -75,6 +77,18 @@ export default async function Index() {
             ?.slice(1, 10)
             ?.map((movie: any) => <MovieCard {...movie} key={movie.id} />)}
         </ul>
+      </div>
+      <div
+        className="h-[600px] overflow-auto w-full"
+      >
+        <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">
+          Horror Movies
+        </h1>
+        <div className="flex flex-wrap justify-center gap-4">
+          {horror
+            ?.slice(1, 10)
+            ?.map((movie: any) => <MovieCard {...movie} key={movie.id} />)}
+        </div>
       </div>
       <Footer />
 
