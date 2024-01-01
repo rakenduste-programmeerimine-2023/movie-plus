@@ -1,9 +1,13 @@
+import AboutUsButton from "../components/AboutUsButton";
 import AuthButton from "../components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
-import Header from "@/components/Header";
+import {
+  getbestMovies,
+} from "@/API/api";
+import MovieCard from "@/components/MovieCard";
 import Footer from "@/components/Footer";
-import AboutUsButton from "@/components/AboutUsButton";
+import Header from "@/components/Header";
 
 
 export default async function Index() {
@@ -18,6 +22,8 @@ export default async function Index() {
   };
 
   const isSupabaseConnected = canInitSupabaseClient();
+  const bestMovies = await getbestMovies();
+
   return (
     <div className="flex-1 w-full flex flex-col gap-10 items-center bg-black">
       <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
@@ -26,12 +32,25 @@ export default async function Index() {
           {isSupabaseConnected && <AuthButton />}
         </div>
         <div className="hj absolute top-0 right-0">
-          <Header />
+          <Header/>
+
         </div>
       </nav>
+      <div className="h-[600px] overflow-auto w-full">
+        <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-4">
+          Best movies
+        </h1>
+        <ul className="flex flex-wrap justify-center gap-4">
+          {bestMovies
+            ?.slice(1, 10)
+            ?.map((movie: any, index: number) => (
+              <MovieCard {...movie} key={movie.id} />
+            ))}
+        </ul>
+      </div>
       <Footer />
+
     </div>
   );
 }
-
 
