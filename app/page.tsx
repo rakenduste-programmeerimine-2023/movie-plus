@@ -52,7 +52,6 @@ export default async function Index() {
       </div>
       <div
         className="h-[600px] overflow-auto w-full"
-        style={{ marginTop: "-5rem" }}
       >
         <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-4">
           Comedy movies
