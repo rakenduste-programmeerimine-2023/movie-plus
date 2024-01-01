@@ -50,62 +50,64 @@ export default async function Index() {
         </h1>
         <ul className="flex flex-wrap justify-center gap-4">
           {bestMovies
-            ?.slice(1, 10)
-            ?.map((movie: any, index: number) => (
-              <MovieCard {...movie} key={movie.id} />
+            ?.slice(5, 10)
+            ?.map((movie: any, index: number) => ( <MovieCard {...movie} key={movie.id} />
             ))}
         </ul>
       </div>
       <div
         className="h-[600px] overflow-auto w-full"
+        style={{ marginTop: "-5rem" }}
       >
         <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-4">
           Comedy movies
         </h1>
         <ul className="flex flex-wrap justify-center gap-4">
           {comedy
-            ?.slice(1, 10)
+            ?.slice(5, 10)
             ?.map((movie: any) => <MovieCard {...movie} key={movie.id} />)}
         </ul>
       </div>
       <div
         className="h-[600px] overflow-auto w-full"
+        style={{ marginTop: "-5rem" }}
       >
         <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">
           Drama movies
         </h1>
         <ul className="flex flex-wrap justify-center gap-4">
           {dramaMovies
-            ?.slice(1, 10)
+            ?.slice(5, 10)
             ?.map((movie: any) => <MovieCard {...movie} key={movie.id} />)}
         </ul>
       </div>
       <div
         className="h-[600px] overflow-auto w-full"
+        style={{ marginTop: "-5rem" }}
       >
         <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">
           Horror Movies
         </h1>
         <div className="flex flex-wrap justify-center gap-4">
           {horror
-            ?.slice(1, 10)
+            ?.slice(5, 10)
             ?.map((movie: any) => <MovieCard {...movie} key={movie.id} />)}
         </div>
       </div>
       <div
         className="h1-[600px] overflow-auto w-full -mt-4"
+        style={{ marginTop: "-5rem" }}
       >
         <h1 className="text-lg md:text-xl lg:text-4xl font-thin text-center mb-8">
           Cartoons
         </h1>
         <ul className="flex flex-wrap justify-center gap-4">
           {cartoons
-            ?.slice(1, 10)
-            .map((movie: any) => <MovieCard {...movie} key={movie.id} />)}
+            ?.slice(5, 10)
+            ?.map((movie: any) => <MovieCard {...movie} key={movie.id} />)}
         </ul>
       </div>
       <Footer />
-
     </div>
   );
 }
