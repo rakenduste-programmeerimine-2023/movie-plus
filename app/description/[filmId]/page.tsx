@@ -25,8 +25,8 @@ async function MovieDescriptionPage({ params }: {params:any}) {
 
   return(
     <div className="flex-1 w-full flex flex-col gap-10 items-center bg-black">
-      <nav className="w-full flex justify-center border-b-foreground/10 h-13"> {/* Уменьшаем высоту */}
-    <div className="w-full max-w-7xl flex justify-between items-center py-1 px-3 text-sm"> {/* Уменьшаем отступы */}
+      <nav className="w-full flex justify-center border-b-foreground/10 h-13">
+    <div className="w-full max-w-7xl flex justify-between items-center py-1 px-3 text-sm">
         <AboutUsButton/>
         <AuthButton />
         <Header />
@@ -40,6 +40,8 @@ async function MovieDescriptionPage({ params }: {params:any}) {
           <img
             src={IMAGE_BASE_URL + movieDescription.backdrop_path}
             className="custom-width"
+            width={300}
+            height={300}
           />
         )}
       </div>
@@ -51,9 +53,9 @@ async function MovieDescriptionPage({ params }: {params:any}) {
           <h4 className="text-xl">Release date:</h4>
           <p className="mt-1">{movieDescription.release_date}</p>
         </div>
-        <div className="flex flex-row w-full gap-2 font-thin">
-          <h4 className="text-xl">Genres:</h4>
-          <div className="mt-1">
+        <div className="flex flex-row w-full gap-2 font-thin items-center">
+            <h4 className="text-xl">Genres:</h4>
+              <div className="mt-1 flex flex-wrap gap-2">
             {movieDescription.genres &&
               movieDescription.genres
                 .reduce((acc: any[][], genre: { name: any; }, index: number) => {
