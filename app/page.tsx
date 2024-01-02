@@ -34,12 +34,12 @@ export default async function Index() {
 
   return (
     <div className="flex-1 w-full flex flex-col gap-10 items-center bg-black">
-      <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
+      <nav className="w-full flex justify-center border-b-foreground/10 h-16">
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
           <AboutUsButton />
           {isSupabaseConnected && <AuthButton />}
         </div>
-        <div className="hj absolute top-0 right-0">
+        <div className="absolute top-0 right-0 h-13">
           <Header/>
 
         </div>
