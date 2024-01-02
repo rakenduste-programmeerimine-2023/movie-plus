@@ -16,8 +16,11 @@ export default function MovieCard({
     <Link href="/description/${id}">
       <Image
         src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}`}
+        width={230}
+        height={500}
         alt={title}
       />
     </Link>
   );
 }
+
