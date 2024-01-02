@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import Image from 'next/image';
 import login from '@/image/login.jpg';
 
+
 export default function Page() {
   return (
     <div className="flex flex-col items-center min-h-screen bg-black text-white">

@@ -76,3 +76,15 @@ export const getCartoons = async () => {
   
     return data.results;
 };
+
+export const getMovieDescription = async (id:string) => {
+    const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?`, {
+      headers: {
+        accept: "application/json",
+        Authorization: `Bearer ${process.env.TMDB_API_AUTH}`,
+      },
+    });
+    const data = await res.json();
+  
+    return data;
+  };
