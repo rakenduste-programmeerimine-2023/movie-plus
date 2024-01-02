@@ -1,10 +1,10 @@
 import AboutUsButton from '../../components/AboutUsButton';
 import AuthButton from '../../components/AuthButton';
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import Image from 'next/image';
 import me from '@/image/me.jpg';
 import notme from '@/image/notme.jpg';
+import Footer from '@/components/Footer';
 
 export default function Page() {
   return (
@@ -28,7 +28,9 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <Footer />
+      <div className="footer-component">
+        <Footer/>
+      </div>
       <div className="header-component absolute top-0 right-0">
         <Header />
       </div>

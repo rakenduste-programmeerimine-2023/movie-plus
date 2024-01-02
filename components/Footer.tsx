@@ -2,6 +2,7 @@ import Image from 'next/image';
 import logof from '@/image/logof.jpg';
 import newslogo from '@/image/newslogo.jpg';
 import Link from 'next/link';
+import kolmastabel from '@/image/kolmastabel.jpg'
 
 function Footer(){
   return (
@@ -37,6 +38,21 @@ function Footer(){
           </Link>
         </div>
       </div>
+      <div className="flex-1 w-full flex flex-col gap-30 items-center place-content-end" style={{ position: 'relative' }}>
+  <div style={{ position: 'absolute', top: '0cm', left: '30cm' }}>
+    <Link href="/yourOpinion">
+      <Image
+        src={kolmastabel}
+        alt="kolmastabel"
+        className="kolmastabel"
+        style={{
+          width: '70px',
+          height: 'auto',
+        }}
+      />
+    </Link>
+  </div>
+</div>
 
       {}
       <h1 style={{ fontWeight: 100 }}>© {new Date().getFullYear()} All rights reserved </h1>

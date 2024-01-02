@@ -54,26 +54,26 @@ export default function yourOpinionPage() {
 
       <form className="animate-in flex-1 flex flex-col w-full justify-center gap-2 text-foreground">
         <label className="text-md" htmlFor="name">
-          Name
+          First name
         </label>
         <input
           className="rounded-md px-4 py-2 bg-inherit border mb-6"
           type="name"
           name="name"
-          placeholder="name"
+          placeholder="Nimi"
           value={name}
           onChange={(e)=> setName(e.target.value)}
           required
         />
 
         <label className="text-md" htmlFor="message">
-          What is your favourite movie/movies genre?
+          What is your favourite movies genre?
         </label>
         <input
           className="rounded-md px-4 py-4 bg-inherit border mb-6 w-full h-24"
           type="text"
           name="message"
-          placeholder="Sinu arvamus"
+          placeholder="Mis on teie lemmikfilmide žanr?"
           value={opinion}
           onChange={(e)=> setOpinion(e.target.value)}
           required

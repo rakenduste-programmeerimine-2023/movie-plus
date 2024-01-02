@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import ogg from '@/image/ogg.jpg';
 import Link from 'next/link';
-
+import kolmastabel from '@/image/kolmastabel.jpg';
 
 const Header: React.FC = () => {
   return (
@@ -13,7 +13,8 @@ const Header: React.FC = () => {
           <Image src={ogg} alt="Logo" width={300} height={300} />
         </div>
       </Link>
-    </div>)
+    </div>
+  );
 }
 
 export default Header;
