@@ -54,7 +54,7 @@ async function MovieDescriptionPage({ params }: {params:any}) {
           <p className="mt-1">{movieDescription.release_date}</p>
         </div>
         <div className="flex flex-row w-full gap-2 font-thin items-center">
-            <h4 className="text-xl">Genres:</h4>
+            <h4 className="text-xl">Movie genres:</h4>
               <div className="mt-1 flex flex-wrap gap-2">
             {movieDescription.genres &&
               movieDescription.genres
@@ -72,7 +72,7 @@ async function MovieDescriptionPage({ params }: {params:any}) {
           </div>
         </div>
         <div className="flex flex-col w-1/2 pr-20 gap-5 font-thin">
-          <h4 className="text-xl">Description:</h4>
+          <h4 className="text-xl">Movie description:</h4>
           <p>{movieDescription.overview}</p>
         </div>
       </div>
