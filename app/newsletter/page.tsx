@@ -89,8 +89,10 @@ export default function NewsletterPage() {
           type="email"
           name="email"
           placeholder="Email"
+
           value={email}
           onChange={(e)=> setEmail(e.target.value)}
+
           required
         />
 
