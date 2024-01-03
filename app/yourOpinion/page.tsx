@@ -32,7 +32,7 @@ export default function yourOpinionPage() {
   return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
       <Link
-        href="/"
+        href="/HomePage"
         className="absolute left-8 top-8 py-2 px-4 rounded-md no-underline text-foreground bg-btn-background hover:bg-btn-background-hover flex items-center group text-sm"
       >
         <svg
@@ -54,7 +54,7 @@ export default function yourOpinionPage() {
 
       <form className="animate-in flex-1 flex flex-col w-full justify-center gap-2 text-foreground">
         <label className="text-md" htmlFor="name">
-          First name
+          Name
         </label>
         <input
           className="rounded-md px-4 py-2 bg-inherit border mb-6"

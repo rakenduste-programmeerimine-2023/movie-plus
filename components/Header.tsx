@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import ogg from '@/image/ogg.jpg';
 import Link from 'next/link';
-import kolmastabel from '@/image/kolmastabel.jpg';
+
 
 const Header: React.FC = () => {
   return (
