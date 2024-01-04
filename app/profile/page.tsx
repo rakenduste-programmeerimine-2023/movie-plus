@@ -2,10 +2,18 @@ import AuthButton from '../../components/AuthButton';
 import Footer2 from '@/components/Footer2';
 import Image from 'next/image';
 import login from '@/image/login.jpg';
+import { cookies } from 'next/headers';
+import { createClient } from '@/utils/supabase/server';
+import { redirect } from 'next/navigation';
 
-
-
-export default function Page() {
+export default async function Page() {
+  const cookieStore = cookies();
+  const supabase = createClient(cookieStore)
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+  
+  if (!user) return redirect('/')
   return (
     <div className="flex0 flex-col items-center min-h-screen  text-white">
       <nav className="w-full  border-b-foreground/10 h-16">
