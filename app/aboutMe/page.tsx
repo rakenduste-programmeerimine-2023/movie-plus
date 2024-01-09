@@ -12,7 +12,7 @@ export default function Page() {
       <div className="header-component absolute top-0 right-0">
         <Header />
       </div>
-      <nav className="w-full border-b border-b-foreground/10 h-16">
+      <nav className="w-full  h-16">
         <div className="max-w-4xl flex justify-between items-center p-3 text-sm mx-auto">
           <AboutUsButton />
           <AuthButton />
