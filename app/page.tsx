@@ -1,4 +1,3 @@
-import AboutUsButton from "../components/AboutUsButton";
 import AuthButton from "../components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
@@ -12,6 +11,7 @@ import {
 import MovieCard from "@/components/MovieCard";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import AboutMeButton from "../components/AboutMeButton";
 
 
 export default async function Index() {
@@ -36,7 +36,7 @@ export default async function Index() {
     <div className="flex-1 w-full flex flex-col gap-10 items-center bg-black">
       <nav className="w-full flex justify-center border-b-foreground/10 h-16">
         <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
-          <AboutUsButton />
+          <AboutMeButton />
           {isSupabaseConnected && <AuthButton />}
         </div>
         <div className="absolute top-0 right-0 h-10 style={{ height: '8px' }}">
