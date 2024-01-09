@@ -19,13 +19,15 @@ async function Page({ searchParams }: PageProps) {
   }
   return (
     <div className="flex-1 w-full flex flex-col gap-10 items-center bg-black">
-      <nav className="w-full flex justify-center border-b-foreground/10 h-16">
-        <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
-          <Header />
+    <nav className="w-full flex justify-end border-b-foreground/10 h-16">
+      <div className="w-full max-w-4xl flex items-center justify-end p-3 text-sm">
+        <div style={{ marginTop: '30px' }}>
           <AuthButton />
           <AboutMeButton />
+          <Header />
         </div>
-      </nav>
+      </div>
+    </nav>
       <ul className="flex flex-wrap justify-center gap-4">
         {searchedMovies?.map(
           (movie: any) =>
