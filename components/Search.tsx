@@ -39,7 +39,7 @@ export default function Search() {
         />
         <button className="search-button" type="submit" id="search-submit-button">
           <span role="button" aria-label="emoji">
-          🔍︎
+          🔎
           </span>
         </button>
       </form>
