@@ -1,3 +1,4 @@
+
 import AuthButton from "../components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
@@ -102,7 +103,7 @@ export default async function Index() {
         </h1>
         <ul className="flex flex-wrap justify-center gap-4">
           {cartoons
-            ?.slice(5, 10)
+            ?.slice(10, 15)
             ?.map((movie: any) => <MovieCard {...movie} key={movie.id} />)}
         </ul>
       </div>

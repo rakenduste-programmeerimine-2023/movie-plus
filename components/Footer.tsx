@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import logof from '@/image/logof.jpg';
-import newslogo from '@/image/newslogo.jpg';
+import feedback from '@/image/feedback.jpg';
+import newsletter from '@/image/newsletter.jpg';
 import Link from 'next/link';
 
 function Footer(){
@@ -12,9 +12,9 @@ function Footer(){
         <div style={{ position: 'relative', marginRight: '20px' }}>
         <Link href="/feedback">
           <Image
-            src={logof}
-            alt="Logof"
-            className="logof"
+            src={feedback}
+            alt="feedback"
+            className="feedback"
             style={{
               width: '200px',
               height: 'auto',
@@ -26,7 +26,7 @@ function Footer(){
         <div style={{ position: 'relative' }}>
         <Link href="/newsletter">
               <Image
-                src={newslogo}
+                src={newsletter}
                 alt="newslogo"
                 className="newslogo"
                 style={{

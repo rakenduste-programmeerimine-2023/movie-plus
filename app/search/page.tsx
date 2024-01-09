@@ -15,7 +15,7 @@ async function Page({ searchParams }: PageProps) {
   const searchedMovies = await getMoviesBySearch({ query: searchText });
 
   if (!searchedMovies) {
-    return <div>loading...</div>;
+    return <div>Loading...</div>;
   }
   return (
     <div className="flex-1 w-full flex flex-col gap-10 items-center bg-black">
