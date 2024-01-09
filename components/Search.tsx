@@ -33,7 +33,7 @@ export default function Search() {
           type="search"
           placeholder="search"
           aria-label="search"
-          style={{height: "30px", color:"black"}}
+          style={{height: "30px", color:"white"}}
           autoComplete="off"
           id="search-input"
         />
