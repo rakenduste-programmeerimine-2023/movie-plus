@@ -39,9 +39,8 @@ export default async function Index() {
           <AboutUsButton />
           {isSupabaseConnected && <AuthButton />}
         </div>
-        <div className="absolute top-0 right-0 h-13">
+        <div className="absolute top-0 right-0 h-10 style={{ height: '8px' }}">
           <Header/>
-
         </div>
       </nav>
       <div className="h-[600px] overflow-auto w-full">
