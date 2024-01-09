@@ -38,9 +38,9 @@ export default function Search() {
           id="search-input"
         />
         <button className="search-button" type="submit" id="search-submit-button">
-          <span role="button" aria-label="emoji">
-          🔎
-          </span>
+            <span role="button" aria-label="emoji" className="text-2xl">
+                🔎
+            </span>
         </button>
       </form>
     </nav>
