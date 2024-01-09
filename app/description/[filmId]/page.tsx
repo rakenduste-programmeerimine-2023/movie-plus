@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import AuthButton from "@/components/AuthButton";
 import Header from "@/components/Header";
 import { Key } from "react";
-import AboutUsButton from "@/components/AboutUsButton";
+import AboutMeButton from "@/components/AboutMeButton";
 
 async function MovieDescriptionPage({ params }: {params:any}) {
   const IMAGE_BASE_URL = "https://www.themoviedb.org/t/p/w220_and_h330_face/";
@@ -27,7 +27,7 @@ async function MovieDescriptionPage({ params }: {params:any}) {
     <div className="flex-1 w-full flex flex-col gap-10 items-center bg-black">
       <nav className="w-full flex justify-center border-b-foreground/10 h-13">
     <div className="w-full max-w-7xl flex justify-between items-center py-1 px-3 text-sm">
-        <AboutUsButton/>
+        <AboutMeButton/>
         <AuthButton />
         <Header />
       </div>
