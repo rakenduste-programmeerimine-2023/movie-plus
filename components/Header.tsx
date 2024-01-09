@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import ogg from '@/image/ogg.jpg';
+import logo from '@/image/logo.jpg';
 import Link from 'next/link';
 import Search from '@/components/Search';
 
@@ -11,7 +11,7 @@ const Header: React.FC = () => {
       </div>
       <Link href="http://localhost:3000/">
         <div className="logo cursor-pointer">
-          <Image src={ogg} alt="Logo" width={300} height={300} />
+          <Image src={logo} alt="Logo" width={300} height={300} />
         </div>
       </Link>
     </div>
