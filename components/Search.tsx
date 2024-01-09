@@ -29,11 +29,11 @@ export default function Search() {
         <input
           onChange={handleChange}
           value={searchText}
-          className="form-control mr-sm-2 rounded text-white font-thin pl-2 border border-solid border-gray-600"
+          className="form-control mr-sm-2 rounded text-white pl-2 font-thin"
           type="search"
           placeholder="search"
           aria-label="search"
-          style={{height: "30px", color:"white"}}
+          style={{height: "30px", color:"black"}}
           autoComplete="off"
           id="search-input"
         />
