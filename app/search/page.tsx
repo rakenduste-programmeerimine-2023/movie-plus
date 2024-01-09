@@ -28,12 +28,16 @@ async function Page({ searchParams }: PageProps) {
         </div>
       </div>
     </nav>
-      <ul className="flex flex-wrap justify-center gap-4">
+    <ul className="flex flex-wrap justify-center grid grid-cols-4 gap-4">
         {searchedMovies?.map(
-          (movie: any) =>
-            movie?.poster_path && <MovieCard {...movie} key={movie.id} />
-        )}
-      </ul>
+            (movie: any) =>
+            movie?.poster_path && (
+        <li key={movie.id} className="mx-4 my-4">
+          <MovieCard {...movie} />
+        </li>
+            )
+         )}
+    </ul>
       <footer className="wi">
         <div className="wp">
           <div className="h">
