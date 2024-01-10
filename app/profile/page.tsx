@@ -36,8 +36,8 @@ export default async function Page() {
             </div>
             <div className="mb-4 mr-4">
               <Image src={login} alt="Logo" width={300} height={300} />
-              <div className="text-pink-500 text-sm font-thin bg-opacity-75 p-2 max-w-xs">
-                Hello! This page is created for authorized users. I have two mini-surveys for you, which you can take by clicking on the cute animals in the bottom left corner of the screen. ❤️ Have a great day!
+              <div className="text-white-500 text-sm font-thin bg-opacity-75 p-2 max-w-xs">
+                Hello🩷! This page is created for authorized users. I have two mini-surveys for you, which you can take by clicking on the cute animals in the bottom left corner of the screen. Have a great day 💗.
               </div>
             </div>
             <div className="mr-4">
