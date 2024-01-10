@@ -5,6 +5,7 @@ import login from '@/image/login.jpg';
 import { cookies } from 'next/headers';
 import { createClient } from '@/utils/supabase/server';
 import { redirect } from 'next/navigation';
+import Header2 from '@/components/Header2';
 
 export default async function Page() {
   const cookieStore = cookies();
@@ -15,12 +16,15 @@ export default async function Page() {
   
   if (!user) return redirect('/')
   return (
-    <div className="flex0 flex-col items-center min-h-screen  text-white">
-      <nav className="w-full  border-b-foreground/10 h-16">
-        <div className="max-w-4xl flex justify-between items-center p-3 text-sm mx-auto">
-          <AuthButton />
-        </div>
-      </nav>
+    <div className="flex-1 flex flex-col items-center min-h-screen text-white">
+    <nav className="w-full border-b-foreground/10 h-16">
+      <div className="max-w-4xl flex justify-between items-center p-3 text-sm mx-auto">
+        <AuthButton />
+      </div>
+    </nav>
+    <div className="absolute top-0 right-0">
+      <Header2 />
+    </div>
       <div className="button-container relative mt-5 text-center">
         <div className="flex flex-col items-center">
             <div className="mb-4">
