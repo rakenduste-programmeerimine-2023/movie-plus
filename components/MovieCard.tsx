@@ -12,6 +12,8 @@ export default function MovieCard({
   title: string;
   id: string
 }) {
+  const truncatedTitle = title.split(' ').slice(0, 5).join(' ');
+
   return (
     <Link href={`/description/${id}`} passHref>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textDecoration: 'none' }}>
@@ -21,8 +23,9 @@ export default function MovieCard({
           src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}`}
           alt={title}
         />
-        <div className="text-center font-thin" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{title}</div>
+        <div className="text-center font-thin" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{truncatedTitle}</div>
       </div>
     </Link>
   );
 }
+
