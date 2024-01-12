@@ -2,8 +2,9 @@ import AuthButton from '../../components/AuthButton';
 import Footer2 from '@/components/Footer2';
 import Image from 'next/image';
 import login from '@/image/login.jpg';
-import aboutMeSecondStyle from '@/image/aboutMeSecondStyle.jpg';
-import aboutMeStyle from '@/image/aboutMeStyle.jpg';
+import profilImage from '@/image/profilImage.jpg';
+import profilSecondImage from '@/image/profilSecondImage.jpg';
+import profilThirdImage from '@/image/profilThirdImage.jpg';
 import { cookies } from 'next/headers';
 import { createClient } from '@/utils/supabase/server';
 import { redirect } from 'next/navigation';
@@ -31,18 +32,23 @@ export default async function Page() {
       <div className="button-container relative mt-5 text-center">
         <div className="flex flex-col items-center">
           <div style={{ display: 'flex' }}>
-            <div className="mr-4">
-              <Image src={aboutMeSecondStyle} alt="style" width={250} height={250} />
-            </div>
-            <div className="mb-4 mr-4">
-              <Image src={login} alt="Logo" width={300} height={300} />
-              <div className="text-white-500 text-sm font-thin bg-opacity-75 p-2 max-w-xs">
-                Hello🩷! This page is created for authorized users. I have two mini-surveys for you, which you can take by clicking on the cute animals in the bottom left corner of the screen. Have a great day 💗.
-              </div>
-            </div>
-            <div className="mr-4">
-              <Image src={aboutMeStyle} alt="style" width={250} height={250} />
-            </div>
+          <div className="flex justify-center">
+  <div className="mr-4">
+    <Image src={profilImage} alt="style" width={600} height={600} />
+  </div>
+  <div className="mb-4 mr-4 flex flex-col items-center">
+    <Image src={login} alt="Logo" width={300} height={300} />
+    <div className="text-white-500 text-sm font-thin bg-opacity-75 p-2 max-w-xs">
+      Hello🩷! This page is created for authorized users. I have two mini-surveys for you, which you can take by clicking on the cute animals in the bottom left corner of the screen. Have a great day 💗.
+    </div>
+  </div>
+  <div className="mr-4">
+    <Image src={profilSecondImage} alt="style" width={400} height={400} />
+  </div>
+  <div className="mr-4" style={{ position: 'relative', top: '300px' }}>
+    <Image src={profilThirdImage} alt="style" width={200} height={200} />
+  </div>
+</div>
           </div>
         </div>
       </div>
